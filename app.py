@@ -13,15 +13,21 @@ def init_db():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS parties (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            title TEXT, 
-            host TEXT,
-            host_id INTEGER, 
+            title TEXT, host TEXT, host_id INTEGER,
             max_1 INTEGER, max_2 INTEGER, max_3 INTEGER, max_4 INTEGER,
             max_normal INTEGER,
             mem_1 TEXT, mem_2 TEXT, mem_3 TEXT, mem_4 TEXT, 
             normal_members TEXT
         )
     ''')
+    
+    # [추가] 데이터가 아예 없을 때만 테스트용 데이터를 넣어줍니다.
+    cursor.execute("SELECT COUNT(*) FROM parties")
+    if cursor.fetchone()[0] == 0:
+        cursor.execute("INSERT INTO parties (title, host, max_normal, normal_members) VALUES (?, ?, ?, ?)", 
+                       ('나타의 시련', '테스트방장', 4, '상단원1,상단원2'))
+        conn.commit()
+        
     conn.commit()
     conn.close()
 
