@@ -74,9 +74,8 @@ def get_parties():
                 {
                     "label": "파티 참여하기",
                     "action": "block",
-                    "blockId": "JOIN_PARTY_BLOCK_ID",  # 카카오 오픈빌더에서 생성할 '파티참여 블록'의 ID를 여기에 넣습니다.
-                    "extra": {
-                        "party_id": p_id  # 버튼 클릭 시 서버로 다시 넘겨줄 파티 고유 ID
+                    "blockId": "6a4b4801ac0ed0806edc10cd",  # 카카오 오픈빌더에서 생성할 '파티참여 블록'의 ID를 여기에 넣습니다.
+                    "extra": {"party_id": p_id  # 버튼 클릭 시 서버로 다시 넘겨줄 파티 고유 ID
                     }
                 }
             ]
