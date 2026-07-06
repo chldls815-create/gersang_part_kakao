@@ -98,7 +98,7 @@ def main_menu():
         "template": {
             "outputs": [{
                 "carousel": {
-                    "type": "basicCard",
+                    "type": "textCard",
                     "items": [{
                         "title": "⚔️ 상단 파티 관리 메뉴",
                         "description": "닉네임을 먼저 등록하신 후 이용해 주세요.",
@@ -124,7 +124,7 @@ def create_party_menu():
         "template": {
             "outputs": [{
                 "carousel": {
-                    "type": "basicCard",
+                    "type": "textCard",
                     "items": [
                         {
                             "title": "🐒 제천대성",
@@ -212,7 +212,7 @@ def get_parties():
                 ]
             })
         conn.close()
-        return jsonify({"version": "2.0", "template": {"outputs": [{"carousel": {"type": "basicCard", "items": items}}]}})
+        return jsonify({"version": "2.0", "template": {"outputs": [{"carousel": {"type": "textCard", "items": items}}]}})
     except Exception as e:
         return jsonify({"version": "2.0", "template": {"outputs": [{"simpleText": {"text": f"오류 발생: {str(e)} "}}]}})
 
@@ -283,7 +283,7 @@ def join_party():
                         "buttons": [{"label": f"{role}(으)로 참여하기", "action": "block", "blockId": "여기에_파티참여처리_블록ID입력", "extra": {"party_id": party_id, "party_type": party_type, "chosen_role": role}}]
                     })
                 conn.close()
-                return jsonify({"version": "2.0", "template": {"outputs": [{"carousel": {"type": "basicCard", "items": role_cards}}]}})
+                return jsonify({"version": "2.0", "template": {"outputs": [{"carousel": {"type": "textCard", "items": role_cards}}]}})
 
             else:
                 c.execute("SELECT id FROM party_members WHERE party_id=? AND role=?", (party_id, chosen_role))
