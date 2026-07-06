@@ -80,7 +80,7 @@ def create_party_menu():
                             "buttons": [{
                                 "label": "이 파티 생성하기",
                                 "action": "block",
-                                "blockId": "6a4b3ec99319fd65f569e167", 
+                                "blockId": "6a4ba2cde923a8b8de49b6dc", 
                                 "extra": {"party_type": "제천대성"}
                             }]
                         },
@@ -90,7 +90,7 @@ def create_party_menu():
                             "buttons": [{
                                 "label": "이 파티 생성하기",
                                 "action": "block",
-                                "blockId": "6a4b3ec99319fd65f569e167", 
+                                "blockId": "6a4ba2cde923a8b8de49b6dc", 
                                 "extra": {"party_type": "나타(쉬움)"}
                             }]
                         },
@@ -100,7 +100,7 @@ def create_party_menu():
                             "buttons": [{
                                 "label": "이 파티 생성하기",
                                 "action": "block",
-                                "blockId": "6a4b3ec99319fd65f569e167", 
+                                "blockId": "6a4ba2cde923a8b8de49b6dc", 
                                 "extra": {"party_type": "나타(어려움)"}
                             }]
                         }
