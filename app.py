@@ -193,6 +193,33 @@ def join_party():
         }
     })
 
+# ... 기존 함수들 (get_parties, join_party 등) ...
+
+# [추가할 코드]
+@app.route('/main_menu', methods=['POST'])
+def main_menu():
+    return jsonify({
+        "version": "2.0",
+        "template": {
+            "outputs": [{
+                "carousel": {
+                    "type": "basicCard",
+                    "items": [{
+                        "title": "⚔️ 상단 파티 관리 메뉴",
+                        "description": "원하시는 기능을 선택해주세요.",
+                        "buttons": [
+                            {"label": "📋 파티 목록", "action": "block", "blockId": "6a4b96222c03941dfb8faea2"},
+                            {"label": "➕ 파티 생성", "action": "block", "blockId": "6a4b3ec99319fd65f569e167"},
+                            {"label": "🏃 참여하기", "action": "block", "blockId": "6a4b4801ac0ed0806edc10cd"}
+                        ]
+                    }]
+                }
+            }]
+        }
+    })
+
+# ... Flask 서버 실행 코드 ...
+
 # --------------------------------------------------
 # 4. 서버 구동
 # --------------------------------------------------
