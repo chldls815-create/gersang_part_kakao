@@ -268,7 +268,7 @@ def join_party():
                 c.execute("SELECT role FROM party_members WHERE party_id=?", (party_id,))
                 taken_roles = [r[0] for r in c.fetchall()]
                 
-                all_roles = ['1.속성몹-水속 우선', '2.패턴+불사몹- 속성무관', '3.패턴+불사몹- 속성무관', '4.침식몹 (똘아리) - 속성 무관']
+                all_roles = ['1.속성몹-水속 우선', '2.패턴+불사몹- 속성무관', '3.패턴+불사몹- 속성무관', '4.침식몹- 속성무관']
                 available_roles = [r for r in all_roles if r not in taken_roles]
 
                 if not available_roles:
